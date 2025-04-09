@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TravelCompanion.ChatbotPage"
+             Title="ChatbotPage">
+    <Grid RowDefinitions="*, Auto" Padding="10">
+        <CollectionView x:Name="ChatMessages" 
+                        ItemsSource="{Binding Messages}">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" 
+                                   ItemSpacing="10"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding}" 
+                           FontAttributes="Bold" 
+                           FontSize="Medium"/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Grid RowDefinitions="Auto,Auto" RowSpacing="5" Grid.Row="1">
+            <Entry x:Name="MessageEntry" Placeholder="Type a message..." />
+            <Button Text="Send" Clicked="OnSendMessageClicked" Grid.Row="2"/>
+        </Grid>
+    </Grid>
+</ContentPage>

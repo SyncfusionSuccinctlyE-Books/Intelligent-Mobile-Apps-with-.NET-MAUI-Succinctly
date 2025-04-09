@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TravelCompanion.DocProcessorPage"
+             Title="DocProcessorPage">
+    <Grid BindingContext="{Binding}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Button Text="Analyze invoice" x:Name="AnalyzeButton"
+                Clicked="AnalyzeButton_Clicked" Margin="10"
+                HorizontalOptions="Center"/>
+
+        <Label x:Name="TxtInvoiceData" 
+               FontSize="Medium" Grid.Row="1" FontAttributes="Bold"
+               Margin="10" LineBreakMode="WordWrap"/>
+    </Grid>
+</ContentPage>

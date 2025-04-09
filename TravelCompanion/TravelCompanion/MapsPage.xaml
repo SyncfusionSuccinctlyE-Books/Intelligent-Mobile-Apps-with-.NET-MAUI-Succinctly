@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="http://schemas.microsoft.com/dotnet/2021/maui/maps"
+             x:Class="TravelCompanion.MapsPage"
+             Title="MapsPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="200" />
+        </Grid.RowDefinitions>
+        <Button Text="Get Current Location and Plan Route" 
+                Margin="5"
+                Clicked="OnGetRouteClicked"/>
+        <maps:Map x:Name="mapControl" 
+                  IsTrafficEnabled="True" Grid.Row="1"
+                  IsShowingUser="True"
+                  MapType="Street" Margin="5"
+                  HeightRequest="500"
+                  WidthRequest="400"
+                  MapClicked="OnMapClicked"/>
+
+        <ScrollView Grid.Row="2">
+            <Label x:Name="DirectionsLabel" 
+               Margin="5"/>
+        </ScrollView>
+    </Grid>
+</ContentPage>

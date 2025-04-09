@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TravelCompanion.SearchPage"
+             Title="SearchPage">
+    <Grid Padding="10" BindingContext="{Binding}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Entry x:Name="SearchEntry" 
+               Placeholder="Search destinations..."/>
+        <Button Text="Search" 
+                Clicked="OnSearchClicked" Grid.Row="1"/>
+        <CollectionView x:Name="ResultsList" Grid.Row="2" 
+                        ItemsSource="{Binding}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout>
+                        <Label Text="{Binding Name}" 
+                               FontSize="Medium" 
+                               FontAttributes="Bold"/>
+                        <Label Text="{Binding Description}" 
+                               FontSize="Medium" />
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

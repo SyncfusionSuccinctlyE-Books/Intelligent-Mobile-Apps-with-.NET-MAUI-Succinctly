@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TravelCompanion.ImageAnalysisPage"
+             Title="ImageAnalysisPage">
+    <Grid Padding="20" VerticalOptions="Fill">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="170"/>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Button Text="Pick an Image" Clicked="OnPickImageClicked" 
+                Margin="5" />
+        <Image x:Name="SelectedImage" 
+               Aspect="AspectFit" Grid.Row="1" />
+        <HorizontalStackLayout Grid.Row="2" HorizontalOptions="Fill">
+            <Button Text="Analyze Image" Margin="5" 
+                Clicked="OnAnalyzeImageClicked" />
+            <Button Text="OCR Recognition" Margin="5" 
+                Clicked="OnOcrAnalyzeImageClicked" />
+        </HorizontalStackLayout>
+        <Button Text="Use voice command" Margin="5" 
+                Clicked="OnVoiceCommandClicked" Grid.Row="3" />
+        <ScrollView Grid.Row="4">
+            <Label x:Name="AnalysisResult" FontAttributes="Bold" 
+               FontSize="Medium"
+               Text="Analysis results will appear here" />
+        </ScrollView>
+        <Button Text="Read Description" Clicked="OnReadDescriptionClicked" 
+                Grid.Row="5" Margin="5" />
+    </Grid>
+</ContentPage>

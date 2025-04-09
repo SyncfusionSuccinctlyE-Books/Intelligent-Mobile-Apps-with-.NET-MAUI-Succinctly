@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TravelCompanion.NaturalLanguagePage"
+             Title="NaturalLanguagePage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid RowDefinitions="Auto, Auto, *" Padding="10">
+            <Editor x:Name="SentimentInputText" FontSize="18"
+                    Placeholder="Enter text for sentiment analysis..." 
+                    HeightRequest="100" Grid.Row="0"/>
+            <Button Text="Analyze Sentiment" Clicked="OnAnalyzeSentimentClicked" Grid.Row="1"/>
+            <Label x:Name="ResultLabel" TextColor="Black" FontSize="Medium" Grid.Row="2"/>
+        </Grid>
+
+        <Grid RowDefinitions="Auto, Auto, Auto, *" Margin="0,10,0,0"
+              Padding="10" Grid.Row="1">
+            <Editor x:Name="TranslatorInputText" FontSize="18"
+                    Placeholder="Enter text to translate..." 
+                    HeightRequest="100" Grid.Row="0"/>
+            <Picker x:Name="LanguagePicker" Grid.Row="1">
+                <Picker.Items>
+                    <x:String>fr</x:String>
+                    <x:String>es</x:String>
+                    <x:String>de</x:String>
+                </Picker.Items>
+            </Picker>
+            <Button Text="Translate" 
+                    Clicked="OnTranslateClicked" 
+                    Grid.Row="2"/>
+            <Label x:Name="TranslatedTextLabel" 
+                   TextColor="Black" Margin="0,10,0,0"
+                   FontSize="Medium" Grid.Row="3"/>
+        </Grid>
+    </Grid>
+</ContentPage>
